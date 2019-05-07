@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 405d8786486a981409d21adf7258ad24
+ScriptedImporter:
+  fileIDToRecycleName:
+    11400000: Assets/Brains/SurvivorBrain.nn
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 83221ad3db87f4b3b91b041047cb2bc5, type: 3}

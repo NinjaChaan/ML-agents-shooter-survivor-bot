@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 36a68d20fe5b05a4fb0e1eeda53ab1dd
+ScriptedImporter:
+  fileIDToRecycleName:
+    11400000: Assets/Brains/ShootingBrain 4.nn
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 83221ad3db87f4b3b91b041047cb2bc5, type: 3}
