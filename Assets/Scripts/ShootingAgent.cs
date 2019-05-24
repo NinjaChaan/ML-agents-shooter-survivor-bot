@@ -137,7 +137,7 @@ public class ShootingAgent : Agent
 	public void Shoot() {
 		timeSinceLastShot = 0f;
 		StartCoroutine(ShootTimer());
-		GameObject bullet = Instantiate(bulletPrefab, shotSpot.position, transform.rotation);
+        GameObject bullet = SimplePool.Spawn(bulletPrefab, shotSpot.position, transform.rotation);
 		bullet.GetComponent<Bullet>().SetOwner(this);
 	}
 

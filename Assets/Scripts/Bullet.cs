@@ -7,18 +7,13 @@ public class Bullet : MonoBehaviour
 	ShootingAgent agent;
 	Rigidbody rb;
 
-	private void Start() {
-		rb = GetComponent<Rigidbody>();
-		rb.AddForce(transform.forward * 200f);
-	}
-
-	// Update is called once per frame
-	void Update()
-    {
-		
+    private void OnEnable() {
+        rb = GetComponent<Rigidbody>();
+        rb.velocity = Vector3.zero;
+        rb.AddForce(transform.forward * 300f);
     }
 
-	public void SetOwner(ShootingAgent agent) {
+    public void SetOwner(ShootingAgent agent) {
 		this.agent = agent;
 	}
 
@@ -26,14 +21,14 @@ public class Bullet : MonoBehaviour
 		//Debug.Log("coll + " + collision.transform.tag);
 		if (collision.transform.CompareTag("wall")) {
 			agent.AddReward(-0.1f);
-			Destroy(gameObject);
+            SimplePool.Despawn(gameObject);
 		}
 	}
 
 	private void OnTriggerEnter(Collider other) {
 		if (other.transform.CompareTag("enemy")) {
 			other.gameObject.GetComponent<Zombie>().TakeDamage();
-			Destroy(gameObject);
-		}
+            SimplePool.Despawn(gameObject);
+        }
 	}
 }

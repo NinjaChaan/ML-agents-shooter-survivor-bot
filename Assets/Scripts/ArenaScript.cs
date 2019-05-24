@@ -18,7 +18,7 @@ public class ArenaScript : MonoBehaviour
 	public void Start() {
 		agent = player.GetComponent<ShootingAgent>();
 		foreach (var spot in zombieSpots) {
-			GameObject z = Instantiate(zombprefab, spot.position, spot.rotation, spot);
+			GameObject z = SimplePool.Spawn(zombprefab, spot.position, spot.rotation, spot);
 			z.GetComponent<Zombie>().arena = this;
 			z.GetComponent<Zombie>().SetAgent(player.transform);
 			zombies.Add(z);
